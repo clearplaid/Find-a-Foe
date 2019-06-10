@@ -1,19 +1,19 @@
 var foes = [
     {
-        "name":"Badguy",
-        "photo":"",
+        "name":"Badguycat",
+        "photo":"https://i.stack.imgur.com/akcbv.jpg",
         "scores":[
-            5,
             1,
-            4,
-            4,
-            5,
             1,
-            2,
-            5,
-            4,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
             1
-            ]
-          
-    }
+        ]     
+    },
 ]
+module.exports = foes;

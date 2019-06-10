@@ -3,7 +3,7 @@
 const path = require("path");
 
 module.exports = function(app) {
-// htmlRoutes.js file should include two routes:
+// htmlRoutes.js file includes two routes:
 
 // A GET Route to /survey which should display the survey page.
 app.get("/survey", function(req, res) {
