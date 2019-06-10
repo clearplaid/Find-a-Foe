@@ -22,8 +22,8 @@
 
     <form>
         <div class="form-group">
-          <h5><label for="name">Your Name Goes Here (Required)</label></h4>
-          <input type="text" id="name" class="form-control" required="">
+          <h5><label for="frenemy-name">Your Name Goes Here (Required)</label></h4>
+          <input type="text" id="frenemy-name" class="form-control" required="">
 
           <br>
 
@@ -33,7 +33,7 @@
     <hr>
         <div class="form-group">
           <h4><strong><label for="q1">1. Your favorite animal is a cat.</label></strong></h4>
-          <select class="form-control" id="q1">
+          <select class="form-control question" id="q1">
             <option value="choice">Select One</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -44,7 +44,7 @@
         </div>
         <div class="form-group">
             <h4><strong><label for="q2">2. You wouldn't be able to live if cats didn't exist.</label></strong></h4>
-            <select class="form-control" id="q2">
+            <select class="form-control question" id="q2">
               <option value="choice">Select One</option>
               <option value="1">1 (Strongly Disagree)</option>
               <option value="2">2</option>
@@ -55,7 +55,7 @@
         </div>
         <div class="form-group">
             <h4><strong><label for="q3">3. Cats are the rulers of the universe, you just live in their world.</label></strong></h4>
-            <select class="form-control" id="q3">
+            <select class="form-control question" id="q3">
               <option value="choice">Select One</option>
               <option value="1">1 (Strongly Disagree)</option>
               <option value="2">2</option>
@@ -66,7 +66,7 @@
           </div>
         <div class="form-group">
             <h4><strong><label for="q4">4. You rarely do something without thinking about cats.</label></strong></h4>
-              <select class="form-control" id="q4">
+              <select class="form-control question" id="q4">
               <option value="choice">Select One</option>
               <option value="1">1 (Strongly Disagree)</option>
               <option value="2">2</option>
@@ -77,7 +77,7 @@
         </div>
         <div class="form-group">
             <h4><strong><label for="q5">5. Hoomans that like cats can rarely upset you.</label></strong></h4>
-            <select class="form-control" id="q5">
+            <select class="form-control question" id="q5">
               <option value="choice">Select One</option>
               <option value="1">1 (Strongly Disagree)</option>
               <option value="2">2</option>
@@ -88,7 +88,7 @@
         </div>
         <div class="form-group">
             <h4><strong><label for="q6">6. It is often very easy for you to relate to other hooman's cats.</label></strong></h4>
-            <select class="form-control" id="q6">
+            <select class="form-control question" id="q6">
               <option value="choice">Select One</option>
               <option value="1">1 (Strongly Disagree)</option>
               <option value="2">2</option>
@@ -99,7 +99,7 @@
           </div>
         <div class="form-group">
             <h4><strong><label for="q7">7. Cats are purrrfect creatures.</label></strong></h4>
-            <select class="form-control" id="q7">
+            <select class="form-control question" id="q7">
               <option value="choice">Select One</option>
               <option value="1">1 (Strongly Disagree)</option>
               <option value="2">2</option>
@@ -110,7 +110,7 @@
           </div>
           <div class="form-group">
               <h4><strong><label for="q8">8. You rarely forget the catnip.</label></strong></h4>
-              <select class="form-control" id="q8">
+              <select class="form-control question" id="q8">
                 <option value="choice">Select One</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -120,7 +120,7 @@
               </select>
           <div class="form-group">
               <h4><strong><label for="q9">9. You think that all cats are simply amazing and you cannot understand dog people.</label></strong></h4>
-              <select class="form-control" id="q9">
+              <select class="form-control question" id="q9">
                 <option value="choice">Select One</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -131,7 +131,7 @@
             </div>
           <div class="form-group">
               <h4><strong><label for="q10">10. You feel more purrrfect when surrounded by cats and cat memes.</label></strong></h4>
-              <select class="form-control" id="q10">
+              <select class="form-control question" id="q10">
                 <option value="choice">Select One</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -183,7 +183,28 @@
 </body>
 </html>
 
+<script type="text/javascript">
 
+$("#submit").on("click", function (event){
+  event.preventDefault();
+
+  var newFrenemy = {
+    frenemyName: $("#frenemy-name").val().trim(),
+    photo: $("#photo"),
+    scores: []
+  }
+  $.each($(".question option:selected"), function(){
+    newFrenemy.scores.push($(this).val());
+  });
+  console.log(newFrenemy);
+
+})
+
+
+
+
+
+</script>
 
 
 
