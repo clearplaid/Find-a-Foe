@@ -1,23 +1,13 @@
 const path = require("path");
 
 var frenemyData = require('../data/frenemies');
-// var friendData = require('../data/friends');
-// var foeData = require('../data/foes');
 
 // apiRoutes.js file should contain two routes:
 module.exports = function(app) {
 // A GET route with the url /api/friends. This will be used to display a JSON of all possible friends.
 app.get("/api/frenemies", function (req, res) {
     res.json(frenemyData);
-})
-
-// app.get("/api/friends", function (req, res) {
-//     res.json(friendData);
-// })
-
-// app.get("/api/foes", function (req, res) {
-//     res.json(foeData);
-// });
+});
 
 // A POST routes /api/friends. This will be used to handle incoming survey results. This route will also be used to handle the compatibility logic.
 app.post("/api/frenemies", function(req, res) {
@@ -46,16 +36,14 @@ app.post("/api/frenemies", function(req, res) {
                 totalDifference += difference; 
             }
             console.log("total diff: " + totalDifference);
-            
-            
+                  
             // The closest match will be the user with the least amount of difference.
 
             if(totalDifference < minimumDifference) {
             friendIndex = i;
             minimumDifference = totalDifference;
             console.log("Current Minimum: " + minimumDifference);
-            }
-            
+            }         
         };
         frenemyData.push(currentUser);
         res.json({status: "ok", friendName: frenemyData[friendIndex].name, friendImage: frenemyData[friendIndex].photo});

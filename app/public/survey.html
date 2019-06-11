@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Friend or Foe Survey</title>
-  <!-- Latest compiled and minified CSS & JS -->
+  <!-- Latest compiled CSS & JS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/eda450702a.js"></script>
@@ -155,7 +155,7 @@
 
     <footer class="footer">
       <div class="container">
-        <p><a href="/api/frenemies" class="text-dark">Frenemies List</a> | <a href="/api/friends" class="text-dark">Friends List</a> | <a href="/api/foes" class="text-dark">Foes List</a> | <a href="https://github.com/clearplaid/Friend-or-Foe" class="text-dark">GitHub Repo</a></p>
+        <p><a href="/api/frenemies" class="text-dark">Frenemies List</a> | <a href="https://github.com/clearplaid/Friend-or-Foe" class="text-dark">GitHub Repo</a></p>
       </div>
     </footer>
 
@@ -183,7 +183,6 @@
         </div>
       </div>
     </div>
- 
 
 </body>
 
@@ -197,7 +196,7 @@ $(document).ready(function(){
         // background opacity of modal 
         opacity: .5, 
         // Transition in duration
-        inDuration: 300, 
+        inDuration: 200, 
         // Transition out duration
         outDuration: 200, 
       });
@@ -224,7 +223,6 @@ $(document).ready(function(){
             $("#userFriend").html(data.friendName);
             $("#userFriendImage").attr("src", data.friendImage);
             $("#friend-modal").modal({show: true});
-
 
             $("#survey").trigger("reset");
       }); 
