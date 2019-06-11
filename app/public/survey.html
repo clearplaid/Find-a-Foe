@@ -5,13 +5,14 @@
   <meta charset="UTF-8">
   <title>Friend or Foe Survey</title>
   <!-- Latest compiled and minified CSS & JS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/eda450702a.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 <body>
-<!-- survey should have 10 questions of your choosing. Each answer should be on a scale of 1 to 5 based on how much the user agrees or disagrees with a question. -->
+<!-- survey has 10 questions. Each answer is on a scale of 1 to 5 based on how much the user agrees or disagrees with a question. -->
 <div class="container">
     
     <h1><strong>Survey Questions</strong></h1>
@@ -20,7 +21,7 @@
     <h3><strong>Who are you?</strong></h3>
     <br>
 
-    <form>
+    <form id="survey">
         <div class="form-group">
           <h5><label for="frenemy-name">Your Name Goes Here (Required)</label></h4>
           <input type="text" id="frenemy-name" class="form-control" required="">
@@ -34,7 +35,7 @@
         <div class="form-group">
           <h4><strong><label for="q1">1. Your favorite animal is a cat.</label></strong></h4>
           <select class="form-control question" id="q1">
-            <option value="choice">Select One</option>
+            <option value="choice" disable selected>Select One</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
             <option value="3">3 (No Opinion)</option>
@@ -45,7 +46,7 @@
         <div class="form-group">
             <h4><strong><label for="q2">2. You wouldn't be able to live if cats didn't exist.</label></strong></h4>
             <select class="form-control question" id="q2">
-              <option value="choice">Select One</option>
+              <option value="choice" disable selected>Select One</option>
               <option value="1">1 (Strongly Disagree)</option>
               <option value="2">2</option>
               <option value="3">3 (Neutral)</option>
@@ -56,7 +57,7 @@
         <div class="form-group">
             <h4><strong><label for="q3">3. Cats are the rulers of the universe, you just live in their world.</label></strong></h4>
             <select class="form-control question" id="q3">
-              <option value="choice">Select One</option>
+              <option value="choice" disable selected>Select One</option>
               <option value="1">1 (Strongly Disagree)</option>
               <option value="2">2</option>
               <option value="3">3 (Can't Make Up Your Mind)</option>
@@ -67,7 +68,7 @@
         <div class="form-group">
             <h4><strong><label for="q4">4. You rarely do something without thinking about cats.</label></strong></h4>
               <select class="form-control question" id="q4">
-              <option value="choice">Select One</option>
+              <option value="choice" disable selected>Select One</option>
               <option value="1">1 (Strongly Disagree)</option>
               <option value="2">2</option>
               <option value="3">3 (Stop being so wishy washy)</option>
@@ -78,7 +79,7 @@
         <div class="form-group">
             <h4><strong><label for="q5">5. Hoomans that like cats can rarely upset you.</label></strong></h4>
             <select class="form-control question" id="q5">
-              <option value="choice">Select One</option>
+              <option value="choice" disable selected>Select One</option>
               <option value="1">1 (Strongly Disagree)</option>
               <option value="2">2</option>
               <option value="3">3 (Pick a side)</option>
@@ -89,7 +90,7 @@
         <div class="form-group">
             <h4><strong><label for="q6">6. It is often very easy for you to relate to other hooman's cats.</label></strong></h4>
             <select class="form-control question" id="q6">
-              <option value="choice">Select One</option>
+              <option value="choice" disable selected>Select One</option>
               <option value="1">1 (Strongly Disagree)</option>
               <option value="2">2</option>
               <option value="3">3 (To agree or not to agree)</option>
@@ -100,7 +101,7 @@
         <div class="form-group">
             <h4><strong><label for="q7">7. Cats are purrrfect creatures.</label></strong></h4>
             <select class="form-control question" id="q7">
-              <option value="choice">Select One</option>
+              <option value="choice" disable selected>Select One</option>
               <option value="1">1 (Strongly Disagree)</option>
               <option value="2">2</option>
               <option value="3">3 (Why can't you make up your mind?)</option>
@@ -111,7 +112,7 @@
           <div class="form-group">
               <h4><strong><label for="q8">8. You rarely forget the catnip.</label></strong></h4>
               <select class="form-control question" id="q8">
-                <option value="choice">Select One</option>
+                <option value="choice" disable selected>Select One</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3 (You have the power!)</option>
@@ -121,7 +122,7 @@
           <div class="form-group">
               <h4><strong><label for="q9">9. You think that all cats are simply amazing and you cannot understand dog people.</label></strong></h4>
               <select class="form-control question" id="q9">
-                <option value="choice">Select One</option>
+                <option value="choice" disable selected>Select One</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3 (Just do it!)</option>
@@ -132,7 +133,7 @@
           <div class="form-group">
               <h4><strong><label for="q10">10. You feel more purrrfect when surrounded by cats and cat memes.</label></strong></h4>
               <select class="form-control question" id="q10">
-                <option value="choice">Select One</option>
+                <option value="choice" disable selected>Select One</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3 (The choice is obvious)</option>
@@ -144,67 +145,79 @@
     <br>
     <br>
     <!-- Submit Button -->
-    <button type="submit" class="btn btn-dark btn-lg btn-block" id="submit"><i class="fa fa-check-circle"></i>
+    <button type="submit" class="btn btn-dark btn-lg btn-block" id="submit" data-toggle="modal" data-target="#friend-modal"><i class="fa fa-check-circle"></i>
      Submit</button>
-    
     </form>
-
-      <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              ...
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
+    
     <hr>
+    
     <footer class="footer">
       <div class="container">
         <p><a href="/api/frenemies" class="text-dark">Frenemies List</a> | <a href="/api/friends" class="text-dark">Friends List</a> | <a href="/api/foes" class="text-dark">Foes List</a> | <a href="https://github.com/clearplaid/Friend-or-Foe" class="text-dark">GitHub Repo</a></p>
       </div>
     </footer>
 
-  </div>
+    <!-- Modal -->
+    <div class="modal fade" id="friend-modal" tabindex="-1" role="dialog" aria-labelledby="friend-modal" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
 
+            <div class="modal-header">
+              <h5 class="modal-title" id="friend-modal-title">Friends, Are We?</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
 
+            <div class="modal-body">
+              <h5 id="userFriend"></h5>
+              <img id="userFriendImage" class="friend-image" width="300" src="">   
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+      </div>
+    </div>
+ 
 
 </body>
-</html>
 
 <script type="text/javascript">
+$(document).ready(function(){
+    $("#submit").on("click", function (event){
+        event.preventDefault();
 
-$("#submit").on("click", function (event){
-  event.preventDefault();
+        var userInput = {
+            frenemyName: $("#frenemy-name").val().trim(),
+            photo: $("#photo").val().trim(),
+            scores: []
+        }
+        $.each($(".question option:selected"), function(){
+            userInput.scores.push($(this).val());
+        });
+        console.log(userInput);
+        
+        // this posts the new data to the frenemy api
+        $.post("/api/frenemies", userInput).done(function(data) {
+            console.log("data: " + JSON.stringify(data));
+            // Once you've found the current user's most compatible friend, display the result as a modal pop-up.
+      
+            // The modal should display both the name and picture of the closest match.
+            $("#userFriend").html(data.friendName);
+            $("#userFriendImage").attr("src", data.friendImage);
+            $("#friend-modal").modal('show');
 
-  var newFrenemy = {
-    frenemyName: $("#frenemy-name").val().trim(),
-    photo: $("#photo"),
-    scores: []
-  }
-  $.each($(".question option:selected"), function(){
-    newFrenemy.scores.push($(this).val());
-  });
-  console.log(newFrenemy);
 
-})
+            $("#survey").trigger("reset");
+      }); 
+        
 
-
-
-
-
+    });
+});
 </script>
 
-
+</html>
 
