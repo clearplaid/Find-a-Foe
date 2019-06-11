@@ -1,2 +1,4 @@
 # Friend-or-Foe
-Find your best or worst match!
+https://friend-or-foe.herokuapp.com/
+
+Find your best match!
