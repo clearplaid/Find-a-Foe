@@ -1,2 +1,2 @@
-# Find-a-Foe
-Find your worst match!
+# Friend-or-Foe
+Find your best or worst match!
