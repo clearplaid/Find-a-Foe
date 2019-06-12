@@ -165,15 +165,20 @@
         <div class="modal-content">
 
             <div class="modal-header">
-              <h5 class="modal-title" id="friend-modal-title">Friends, Are We?</h5>
+              <h1 class="modal-title" id="friend-modal-title">Friends, Are We?</h1>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
 
             <div class="modal-body">
+              <h3>Keep your friends close...</h3>
               <h5 id="userFriend"></h5>
-              <img id="userFriendImage" class="friend-image img-fluid" width="300" src="" alt="Friend">   
+              <img id="userFriendImage" class="friend-image img-fluid" width="300" src="" alt="Friend"> 
+              <hr>
+              <h3>And your enemies closer!</h3>
+              <h5 id="userEnemy"></h5>
+              <img id="userEnemyImage" class="friend-image img-fluid" width="300" src="" alt="Enemy">   
             </div>
 
             <div class="modal-footer">
@@ -222,6 +227,8 @@ $(document).ready(function(){
             // The modal should display both the name and picture of the closest match.
             $("#userFriend").html(data.friendName);
             $("#userFriendImage").attr("src", data.friendImage);
+            $("#userEnemy").html(data.enemyName);
+            $("#userEnemyImage").attr("src", data.enemyImage);
             $("#friend-modal").modal({show: true});
 
             $("#survey").trigger("reset");

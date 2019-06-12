@@ -17,14 +17,15 @@ app.post("/api/frenemies", function(req, res) {
     var currentUser = req.body;
     // Convert each user's results into a simple array of numbers (ex: [5, 1, 4, 4, 5, 1, 2, 5, 4, 1]).
     var currentUserScores = currentUser.scores;
-    var userTotalScore = 0;
     for (let i = 0; i < currentUserScores.length; i++) {
         currentUser.scores[i] = parseInt(currentUser.scores[i]);
     }
     console.log("current user scores: " + currentUser.scores);
     
     var friendIndex = 0;
+    var enemyIndex = 0;
     var minimumDifference = 40;
+    var maxDifference = 0;
 
         // compare the difference between current user's scores against those from other users, question by question. Add up the differences to calculate the totalDifference.
         for (let i = 0; i < frenemyData.length; i++) {
@@ -40,13 +41,18 @@ app.post("/api/frenemies", function(req, res) {
             // The closest match will be the user with the least amount of difference.
 
             if(totalDifference < minimumDifference) {
-            friendIndex = i;
-            minimumDifference = totalDifference;
-            console.log("Current Minimum: " + minimumDifference);
-            }         
+                friendIndex = i;
+                minimumDifference = totalDifference;
+                console.log("Current Minimum: " + minimumDifference);
+            }  
+            if(totalDifference > maxDifference) {
+                enemyIndex = i;
+                maxDifference = totalDifference;
+                console.log("Current Max: " + maxDifference);
+            }       
         };
         frenemyData.push(currentUser);
-        res.json({status: "ok", friendName: frenemyData[friendIndex].name, friendImage: frenemyData[friendIndex].photo});
+        res.json({status: "ok", friendName: frenemyData[friendIndex].name, friendImage: frenemyData[friendIndex].photo, enemyName: frenemyData[enemyIndex].name, enemyImage: frenemyData[enemyIndex].photo});
    });
 
 };
