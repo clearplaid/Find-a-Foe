@@ -11,6 +11,7 @@
   <script src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -25,19 +26,19 @@
 
     <form id="survey">
         <div class="form-group">
-          <h5><label for="frenemy-name">Your Name Goes Here (Required)</label></h4>
-          <input type="text" id="frenemy-name" class="form-control" required="">
+          <h5><label for="frenemyName">Your Name or Your Cat's Name Here:</label></h4>
+          <input type="text" required id="frenemyName" class="form-control validate" name="frenemyName" placeholder="name required">
 
           <br>
 
-          <h5><label for="photo">Link Yours or Your Cat's Photo Here (Required)</label></h4>
-          <input type="text" id="photo" class="form-control" required="">
+          <h5><label for="photo">Link Yours or Your Cat's Photo Here:</label></h4>
+          <input type="url" required id="photo" class="form-control validate" name="photo" placeholder="url required">
         </div>
     <hr>
         <div class="form-group">
           <h4><strong><label for="q1">1. Your favorite animal is a cat.</label></strong></h4>
           <select class="form-control question" id="q1">
-            <option value="choice" disable selected>Select One</option>
+            <option value="" disabled selected>Select One</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
             <option value="3">3 (No Opinion)</option>
@@ -48,7 +49,7 @@
         <div class="form-group">
             <h4><strong><label for="q2">2. You wouldn't be able to live if cats didn't exist.</label></strong></h4>
             <select class="form-control question" id="q2">
-              <option value="choice" disable selected>Select One</option>
+              <option value="" disabled selected>Select One</option>
               <option value="1">1 (Strongly Disagree)</option>
               <option value="2">2</option>
               <option value="3">3 (Neutral)</option>
@@ -59,7 +60,7 @@
         <div class="form-group">
             <h4><strong><label for="q3">3. Cats are the rulers of the universe, you just live in their world.</label></strong></h4>
             <select class="form-control question" id="q3">
-              <option value="choice" disable selected>Select One</option>
+              <option value="" disabled selected>Select One</option>
               <option value="1">1 (Strongly Disagree)</option>
               <option value="2">2</option>
               <option value="3">3 (Can't Make Up Your Mind)</option>
@@ -70,7 +71,7 @@
         <div class="form-group">
             <h4><strong><label for="q4">4. You rarely do something without thinking about cats.</label></strong></h4>
               <select class="form-control question" id="q4">
-              <option value="choice" disable selected>Select One</option>
+              <option value="" disabled selected>Select One</option>
               <option value="1">1 (Strongly Disagree)</option>
               <option value="2">2</option>
               <option value="3">3 (Stop being so wishy washy)</option>
@@ -81,7 +82,7 @@
         <div class="form-group">
             <h4><strong><label for="q5">5. Hoomans that like cats can rarely upset you.</label></strong></h4>
             <select class="form-control question" id="q5">
-              <option value="choice" disable selected>Select One</option>
+              <option value="" disabled selected>Select One</option>
               <option value="1">1 (Strongly Disagree)</option>
               <option value="2">2</option>
               <option value="3">3 (Pick a side)</option>
@@ -92,7 +93,7 @@
         <div class="form-group">
             <h4><strong><label for="q6">6. It is often very easy for you to relate to other hooman's cats.</label></strong></h4>
             <select class="form-control question" id="q6">
-              <option value="choice" disable selected>Select One</option>
+              <option value="" disabled selected>Select One</option>
               <option value="1">1 (Strongly Disagree)</option>
               <option value="2">2</option>
               <option value="3">3 (To agree or not to agree)</option>
@@ -103,7 +104,7 @@
         <div class="form-group">
             <h4><strong><label for="q7">7. Cats are purrrfect creatures.</label></strong></h4>
             <select class="form-control question" id="q7">
-              <option value="choice" disable selected>Select One</option>
+              <option value="" disabled selected>Select One</option>
               <option value="1">1 (Strongly Disagree)</option>
               <option value="2">2</option>
               <option value="3">3 (Why can't you make up your mind?)</option>
@@ -114,7 +115,7 @@
           <div class="form-group">
               <h4><strong><label for="q8">8. You rarely forget the catnip.</label></strong></h4>
               <select class="form-control question" id="q8">
-                <option value="choice" disable selected>Select One</option>
+                <option value="" disabled selected>Select One</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3 (You have the power!)</option>
@@ -124,7 +125,7 @@
           <div class="form-group">
               <h4><strong><label for="q9">9. You think that all cats are simply amazing and you cannot understand dog people.</label></strong></h4>
               <select class="form-control question" id="q9">
-                <option value="choice" disable selected>Select One</option>
+                <option value="" disabled selected>Select One</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3 (Just do it!)</option>
@@ -135,7 +136,7 @@
           <div class="form-group">
               <h4><strong><label for="q10">10. You feel more purrrfect when surrounded by cats and cat memes.</label></strong></h4>
               <select class="form-control question" id="q10">
-                <option value="choice" disable selected>Select One</option>
+                <option value="" disabled selected>Select One</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
                 <option value="3">3 (The choice is obvious)</option>
@@ -147,7 +148,7 @@
     <br>
     <br>
     <!-- Submit Button -->
-    <button type="submit" class="btn btn-dark btn-lg btn-block" id="submit" data-toggle="modal" data-target="#friend-modal"><i class="fa fa-check-circle"></i>
+    <button type="submit" class="btn btn-dark btn-lg btn-block" id="submit"><i class="fa fa-check-circle"></i>
      Submit</button>
     </form>
     
@@ -205,38 +206,59 @@ $(document).ready(function(){
         // Transition out duration
         outDuration: 200, 
       });
+    });
 
     $("#submit").on("click", function (event){
         event.preventDefault();
+        // validate form
+        validateForm();
 
-        var userInput = {
-            frenemyName: $("#frenemy-name").val().trim(),
-            photo: $("#photo").val().trim(),
-            scores: []
-        }
-        $.each($(".question option:selected"), function(){
-            userInput.scores.push($(this).val());
-        });
-        console.log(userInput);
-        
-        // this posts the new data to the frenemy api
-        $.post("/api/frenemies", userInput).done(function(data) {
-            console.log("data: " + JSON.stringify(data));
-            // Once you've found the current user's most compatible friend, display the result as a modal pop-up.
-      
-            // The modal should display both the name and picture of the closest match.
-            $("#userFriend").html(data.friendName);
-            $("#userFriendImage").attr("src", data.friendImage);
-            $("#userEnemy").html(data.enemyName);
-            $("#userEnemyImage").attr("src", data.enemyImage);
-            $("#friend-modal").modal({show: true});
+        function validateForm() {
+            var valid = true;
+            $.each($(".validate"), function (){
+              if ($(this).val() === "") {
+                valid = false;
+              }
+            });        
+            $.each($(".question option:selected"), function() {
+              if ($(this).val() === "") {
+              valid = false;
+              }
+            });
+            return valid;
+          };
 
-            $("#survey").trigger("reset");
-      }); 
-        
+        if (validateForm()) {
+            var userInput = {
+                frenemyName: $("#frenemyName").val().trim(),
+                photo: $("#photo").val().trim(),
+                scores: []
+            }
+            $.each($(".question option:selected"), function(){
+                userInput.scores.push($(this).val());
+            });
+          
+            console.log(userInput);
+            
+            // this posts the new data to the frenemy api
+            $.post("/api/frenemies", userInput).done(function(data) {
+                console.log("data: " + JSON.stringify(data));
+                // Once you've found the current user's most compatible friend, display the result as a modal pop-up.
+          
+                // The modal should display both the name and picture of the closest match.
+                $("#userFriend").html(data.friendName);
+                $("#userFriendImage").attr("src", data.friendImage);
+                $("#userEnemy").html(data.enemyName);
+                $("#userEnemyImage").attr("src", data.enemyImage);
+                $("#friend-modal").modal({show: true});
 
+                $("#survey").trigger("reset");
+            });  
+        }else {
+          alert("Survey is incomplete, please fill in required fields!");
+        };
     });
-});
+
 </script>
 
 </html>

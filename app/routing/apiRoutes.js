@@ -17,6 +17,7 @@ app.post("/api/frenemies", function(req, res) {
     var currentUser = req.body;
     // Convert each user's results into a simple array of numbers (ex: [5, 1, 4, 4, 5, 1, 2, 5, 4, 1]).
     var currentUserScores = currentUser.scores;
+    // turn scores from strings to integers
     for (let i = 0; i < currentUserScores.length; i++) {
         currentUser.scores[i] = parseInt(currentUser.scores[i]);
     }
@@ -39,18 +40,19 @@ app.post("/api/frenemies", function(req, res) {
             console.log("total diff: " + totalDifference);
                   
             // The closest match will be the user with the least amount of difference.
-
             if(totalDifference < minimumDifference) {
                 friendIndex = i;
                 minimumDifference = totalDifference;
                 console.log("Current Minimum: " + minimumDifference);
-            }  
+            } 
+            // The farthest match will be the user with the most amount of difference. 
             if(totalDifference > maxDifference) {
                 enemyIndex = i;
                 maxDifference = totalDifference;
                 console.log("Current Max: " + maxDifference);
             }       
         };
+        // send information back to the html to be seen by the user
         frenemyData.push(currentUser);
         res.json({status: "ok", friendName: frenemyData[friendIndex].name, friendImage: frenemyData[friendIndex].photo, enemyName: frenemyData[enemyIndex].name, enemyImage: frenemyData[enemyIndex].photo});
    });
